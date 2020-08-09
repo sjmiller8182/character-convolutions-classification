@@ -15,6 +15,18 @@ def get_convolutional_model(vocab_size: int,
                             model_size: str='small'
                             ) -> Model:
     """Create a character convolutional model
+
+    Parameters
+    ----------
+    vocab_size: the number of characters in the vocabulary
+    input_length: the size of the input sequences (must be least 160)
+    num_classes: the number of output classes
+    embedding_size: the vector size of character representations
+    model_size: 'large' or 'small' feature sizes
+
+    Returns
+    -------
+    tf.keras.Model: an uncompiled keras model
     """
 
     if model_size.lower() == 'small':
@@ -25,6 +37,9 @@ def get_convolutional_model(vocab_size: int,
         dnn_size = 2048
     else:
         ValueError("model size must be either 'small' or 'large'")
+
+    if input_length < 160:
+        ValueError('The input sequences must be at least 160 characters long')
 
     model = Sequential()
     model.add(layers.Embedding(
@@ -99,8 +114,19 @@ def get_recurrent_model(vocab_size: int,
                         input_length: int,
                         num_classes: int,
                         embedding_size: int=300
-                        ):
+                        ) -> Model:
     """Create an LSTM model
+
+    Parameters
+    ----------
+    vocab_size: the number of characters in the vocabulary
+    input_length: the size of the input sequences (must be least 160)
+    num_classes: the number of output classes
+    embedding_size: the vector size of character representations
+
+    Returns
+    -------
+    tf.keras.Model: an uncompiled keras model
     """
     model = Sequential()
     model.add(layers.Embedding(
@@ -120,11 +146,20 @@ def get_recurrent_model(vocab_size: int,
     return model
 
 def get_use_model(output_size: int,
-                  use_url: str=None):
+                  use_url: str=None) -> Model:
     """Create a model based on the Universal Sentence Encoder.
     The model is extracted from TensorFlow Hub.
 
     See https://arxiv.org/abs/1803.11175.
+
+    Parameters
+    ----------
+    num_classes: the number of output classes
+    use_url: url for the universal sentence encoder model (tfhub)
+
+    Returns
+    -------
+    tf.keras.Model: an uncompiled keras model
     """
 
     if use_url is None:

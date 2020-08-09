@@ -131,6 +131,12 @@ class CharacterTranslator:
             sequences: List[str],
             vocab_limit: int = None) -> None:
         """Build the dictionaries from the strings
+
+        Parameters
+        ----------
+        sequences: a List of strings to fit the translator
+        vocab_limit: a threshold to limit the tokens to the most common; 
+            others are mapped to (<OOV>).
         """
         # tokenize
         tokenized = self._tokenize(sequences, self.unigram)
@@ -154,6 +160,11 @@ class CharacterTranslator:
                   sequences: List[str],
                   maxlen: int):
         """Transform a list of sentences to numeric sequences
+
+        Parameters
+        ----------
+        sequences: a List of strings to tokenize and encode
+        maxlen: the new size of all sequences
         """
         # tokenize
         tokenized = self._tokenize(sequences, self.unigram)
@@ -168,6 +179,13 @@ class CharacterTranslator:
                       vocab_limit: int = None
                       ):
         """Fit on given dataset, then transform given dataset
+
+        Parameters
+        ----------
+        sequences: a List of strings to tokenize and encode
+        maxlen: the new size of all sequences
+        vocab_limit: a threshold to limit the tokens to the most common; 
+            others are mapped to (<OOV>).
         """
         self.fit(sequences, vocab_limit)
         return self.transform(sequences, maxlen)

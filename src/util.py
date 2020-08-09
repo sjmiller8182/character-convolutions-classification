@@ -2,9 +2,9 @@
 """
 
 import numpy as np
-
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import cosine as cosine_distance
+import tensorflow
 
 def similarity(vector1: np.ndarray,
                vector2: np.ndarray) -> float:
@@ -12,8 +12,12 @@ def similarity(vector1: np.ndarray,
                """
                return 1 - cosine_distance(vector1, vector2)
 
-def plot_loss_accuracy(history):
+def plot_loss_accuracy(history: tensorflow.keras.callbacks.History) -> None:
     """Plot loss and accuracy history
+
+    Parameters
+    ----------
+    history: a model History callback with loss, accuracy, val_loss, and val_accuracy
     """
     
     # find the minimum loss epoch
