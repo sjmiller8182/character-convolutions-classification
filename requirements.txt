@@ -1,0 +1,3 @@
+numpy
+sklearn
+tensorflow-gpu >= 2.1
