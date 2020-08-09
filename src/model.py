@@ -136,11 +136,12 @@ def get_recurrent_model(vocab_size: int,
     ))
     
     model.add(
-        layers.LSTM(
-            100,
-            dropout=0.15,
-            recurrent_dropout=0.15))
-
+        layers.Bidirectional(
+            layers.LSTM(
+                100,
+                dropout=0.15,
+                recurrent_dropout=0.15)))
+    model.add(layers.Dropout(0.2))
     model.add(layers.Dense(num_classes, activation='softmax'))
     
     return model
