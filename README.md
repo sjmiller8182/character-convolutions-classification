@@ -1,6 +1,6 @@
 # Character Convolutions for Text Classification
 
-This is an implmenetation of "Character-level Convolutional Networks for Text Classification" in TensorFlow.
+This is an implmenetation of "Character-level Convolutional Networks for Text Classification" (Zhang, X. et al., 2015) in TensorFlow.
 
 Paper: [https://arxiv.org/pdf/1509.01626.pdf](https://arxiv.org/pdf/1509.01626.pdf)
 
@@ -75,3 +75,6 @@ The ConvNet model provides a good middle ground between the three models with re
 A notebook walking through this comparison is located 
 [here](./character-convolution-tutorial.ipynb)
 
+## References
+
+Zhang, X., Zhao, J., & LeCun, Y. (2015). Character-level convolutional networks for text classification. Retrieved from https://arxiv.org/abs/1509.01626
