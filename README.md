@@ -43,12 +43,33 @@ Dropout of probability of 0.5 is included between each fully connected layer.
 
 * No notion of word level semantics
 
+## Benchmark
+
+This model was trained on twitter messages (from 2012) annotated with sentiment (positive or negative). 
+See ["Twitter Sentiment Classification using Distant Supervision"](https://www-cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf) for more information on the dataset.
+
+This character-level convolutional model performs on par with the more traditional methods shown in the paper.
+The ConvNet model performance is shown below.
+
+![ConvNet_Performance](./images/ConvNet_Accuracy_Loss.png)
+
 ## Comparison vs LSTM, Universal Sentence Encoder
 
+This model was compared with the Universal Sentence Encoder (USE) and a character-level bidirectional LSTM.
+As shown in the validation performance plots below,
+the LSTM provides the best accuracy followed by the ConvNet model and the USE model 
 
+![Comparison_Performance](./images/model_performance_compare.png)
 
+However, in terms of cost, we can see that models rank in the opposite order (no free lunch).
+The bidirectional LSTM provided the best validation accuracy,
+but at a much greater cost.
+The ConvNet model provides a good middle ground between the three models with reasonably good accuracy at relatively training cost.
+
+![Comparison_Performance](./images/model_training_time_compare.png)
 
 ## Notebook 
 
-
+A notebook walking through this comparison is located 
+[here](./character-convolution-tutorial.ipynb)
 
