@@ -4,6 +4,8 @@ This is an implmenetation of "Character-level Convolutional Networks for Text Cl
 
 Paper: [https://arxiv.org/pdf/1509.01626.pdf](https://arxiv.org/pdf/1509.01626.pdf)
 
+For an implementation in PyTorch see [Ahmed BESBES](https://www.ahmedbesbes.com/)'s implementation at [ahmedbesbes.com/case-studies/character-level-cnn](https://www.ahmedbesbes.com/case-studies/character-level-cnn).
+
 ## Architecture
 
 The architecture of the model is described in section 2.3 of the paper.
