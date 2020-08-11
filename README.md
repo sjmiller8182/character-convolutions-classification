@@ -47,7 +47,7 @@ Dropout of probability of 0.5 is included between each fully connected layer.
 
 ## Benchmark
 
-This model was trained on twitter messages (from 2012) annotated with sentiment (positive or negative). 
+This model was trained on twitter messages (from 2009) annotated with sentiment (positive or negative). 
 See ["Twitter Sentiment Classification using Distant Supervision"](https://www-cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf) for more information on the dataset.
 
 This character-level convolutional model performs on par with the more traditional methods shown in the paper.
@@ -77,4 +77,7 @@ A notebook walking through this comparison is located
 
 ## References
 
+Go, A., Bhayani, R., & Huang, L. (2009). Twitter Sentiment Classification using Distant Supervision. Retrieved from https://www-cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf
+
 Zhang, X., Zhao, J., & LeCun, Y. (2015). Character-level convolutional networks for text classification. Retrieved from https://arxiv.org/abs/1509.01626
+
