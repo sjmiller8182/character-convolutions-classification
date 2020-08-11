@@ -55,7 +55,7 @@ The ConvNet model performance is shown below.
 
 ![ConvNet_Performance](./images/ConvNet_Accuracy_Loss.png)
 
-## Comparison vs LSTM, Universal Sentence Encoder
+## Comparison vs LSTM, Universal Sentence Encoder\*
 
 This model was compared with the Universal Sentence Encoder (USE) and a character-level bidirectional LSTM.
 As shown in the validation performance plots below,
@@ -69,6 +69,10 @@ but at a much greater cost.
 The ConvNet model provides a good middle ground between the three models with reasonably good accuracy at relatively training cost.
 
 ![Comparison_Performance](./images/model_training_time_compare.png)
+
+\*The universal sentence encoder was not fine-tuned in this application.
+It was only used to vectorize the text, which was then classified with a DNN.
+However, even without fine-tuning, the USE model appears to perform very well.
 
 ## Notebook 
 
